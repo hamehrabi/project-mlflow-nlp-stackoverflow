@@ -43,7 +43,7 @@ def main(config_path: str) -> None:
     config = read_yaml(config_path)
 
     source_data_dirs = config["source_data_dirs"]
-    local_data_dirs = config["local_data_dirs"]
+    local_data_dirs = config["local_data_dirs"]["data_dir"]
 
     N = len(source_data_dirs)
     for source_data_dir, local_data_dir in tqdm(

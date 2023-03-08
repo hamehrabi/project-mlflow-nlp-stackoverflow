@@ -23,9 +23,9 @@ def main(config_path, params_path):
     config = read_yaml(config_path)
     params = read_yaml(params_path)
 
-    local_data_dir = config["source_download_dir"]["data_dir"]
-    data_filename = config["source_download_dir"]["data_file"]
-    input_data = os.path.join(local_data_dir, data_filename) 
+    local_data_dirs = config["local_data_dirs"]["data_dir"]
+    data_filename = config["local_data_dirs"]["data_file"] 
+    input_data = os.path.join(local_data_dirs, data_filename) 
 
     split = params["prepare"]["split"]
     seed = params["prepare"]["seed"]
