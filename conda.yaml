@@ -49,7 +49,7 @@ dependencies:
       - packaging==23.0
       - pandas==1.5.3
       - pillow==9.4.0
-      - protobuf==4.22.0
+      - protobuf==4.22.1
       - pyarrow==11.0.0
       - pyjwt==2.6.0
       - pyparsing==3.0.9

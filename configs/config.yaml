@@ -11,12 +11,17 @@ artifacts:
   MODEL_DIR: model
   MODEL_NAME: model.pkl
 
-source_data_url: https://drive.google.com/file/d/13A0RtvZZanHXKZNbz5JKwjjO2FedNQCR/view
+## Use the function below, if you use URL links as your data source
+#source_data_url: https://drive.google.com/file/d/1agyr-U_DGlH43ntuPmAoUZ5Q4veXK_Pd/view?usp=sharing
+# source_download_dir:
+#   data_dir: data
+#   data_file: data.xml
 
-source_download_dir:
-  data_dir: data
-  data_file: data.xml
-
+## Use the function below if you have already downloaded the dataset and the data source is located on your local PC.
+source_data_dirs:
+  - ../NLP-dataset
+local_data_dirs:
+  - data
 
 plots:
   PRC: prc.json
