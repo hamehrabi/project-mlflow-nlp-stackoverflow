@@ -21,8 +21,8 @@ artifacts:
 source_data_dirs:
   - ../NLP-dataset
 local_data_dirs:
-  data_dir: data
-  data_file: data.xml
+  data : data
+  data_file: data/data.xml
 
 plots:
   PRC: prc.json
