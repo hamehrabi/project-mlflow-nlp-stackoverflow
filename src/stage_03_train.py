@@ -6,8 +6,10 @@ from src.utils.common import read_yaml, create_directories
 import numpy as np
 import joblib
 from sklearn.ensemble import RandomForestClassifier
+import mlflow
+import mlflow.sklearn
 
-STAGE = "stage 04 training"  
+STAGE = "Three"  
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
@@ -42,6 +44,9 @@ def main(config_path, params_path):
     seed = params["train"]["seed"]
     n_est = params["train"]["n_est"]
     min_split = params["train"]["min_split"]
+    mlflow.log_param("seed", seed)
+    mlflow.log_param("n_est", n_est)
+    mlflow.log_param("min_split", min_split)
 
     model = RandomForestClassifier(
         n_estimators=n_est, min_samples_split=min_split, n_jobs=2, random_state=seed
@@ -50,6 +55,8 @@ def main(config_path, params_path):
     model.fit(X, labels)
 
     joblib.dump(model, model_path)
+    mlflow.sklearn.log_model(model, "model")
+
     logging.info(f"model is trained and saved at: {model_path}")
 
 if __name__ == '__main__':

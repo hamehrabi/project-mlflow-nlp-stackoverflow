@@ -6,8 +6,10 @@ from src.utils.common import read_yaml, save_json
 import numpy as np
 import sklearn.metrics as metrics
 import math
+import mlflow
+import mlflow.sklearn
 
-STAGE = "stage 05 evaluate" ## <<< change stage name 
+STAGE = "Four" ## <<< change stage name 
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
@@ -43,6 +45,8 @@ def main(config_path):
 
     avg_prec = metrics.average_precision_score(labels, predictions)
     roc_auc = metrics.roc_auc_score(labels, predictions)
+    mlflow.log_metric("avg_prec", avg_prec)
+    mlflow.log_metric("roc_auc", roc_auc)
 
     scores = {
         "avg_prec": avg_prec,
@@ -50,8 +54,9 @@ def main(config_path):
     }
 
     save_json(scores_json_path, scores)
-    
+ 
     precision, recall, prc_threshold = metrics.precision_recall_curve(labels, predictions)
+
     nth_points = math.ceil(len(prc_threshold) / 1000)
     prc_points = list(zip(precision, recall, prc_threshold))[::nth_points]
 
@@ -74,6 +79,9 @@ def main(config_path):
     } 
 
     save_json(ROC_json_path, roc_data)
+
+    mlflow.sklearn.autolog()
+
 
 
 if __name__ == '__main__':

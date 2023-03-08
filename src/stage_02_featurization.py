@@ -5,9 +5,9 @@ from src.utils.common import read_yaml, create_directories ,get_df
 from src.utils.featurize import save_matrix
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+import mlflow
 
-
-STAGE = "Stage 03 featurization" 
+STAGE = "Two" 
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
@@ -39,6 +39,8 @@ def main(config_path, params_path):
 
     max_features = params["featurize"]["max_features"]
     ngrams = params["featurize"]["ngrams"]
+    mlflow.log_param("max_features", max_features)
+    mlflow.log_param("ngrams", ngrams)
 
     bag_of_words = CountVectorizer(
         stop_words="english", max_features=max_features, ngram_range=(1, ngrams)
