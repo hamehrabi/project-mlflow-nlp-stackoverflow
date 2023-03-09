@@ -18,6 +18,7 @@ logging.basicConfig(
 
 
 def main(config_path, params_path):
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
     ## read config files
     config = read_yaml(config_path)
     params = read_yaml(params_path)
