@@ -11,7 +11,7 @@
 ### STEP 03- Create a conda environment after opening the repository in VSCODE
 
 ```bash
-conda create --prefix ./env python=3.7 -y
+conda create --prefix ./env python=3.8 -y
 ```
 
 ```bash
@@ -20,6 +20,11 @@ conda activate ./env
 OR
 ```bash
 source activate ./env
+```
+
+### One shot create and activate environment
+```bash
+conda create --prefix ./env python=3.8 -y && source activate ./env
 ```
 
 ### STEP 04- install the requirements
@@ -33,3 +38,19 @@ dvc init
 ```
 
 ### STEP 06- commit and push the changes to the remote repository
+
+
+### extra commands - 
+
+```bash
+echo "*.log" >> logs/.gitignore
+```
+
+```bash
+git rm --cached logs/running_logs.log
+```
+
+###  start mlflow sqlite server
+```bash
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 5000
+```
