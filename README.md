@@ -1,56 +1,49 @@
-# Project: MLflow NLP for Tags Classification (Database: StackOverflow)
+# Project: NLP Binary Classification using Microservices Architecture for StackOverflow Tag Prediction with DVC Integration.
+## ✨ Project information:
+The project is a natural language processing (NLP) binary classifier problem of predicting tags for a given StackOverflow question. For example, we want one classifier which can predict a post that is about the R language by tagging it R. The project uses MLflow for tracking our experiments, and it is built on a microservices architecture, making it an end-to-end project. The dataset can be downloaded from this [link](https://drive.google.com/u/3/uc?id=1agyr-U_DGlH43ntuPmAoUZ5Q4veXK_Pd&export=download).
 
-* data is available at - [this googele drive link](https://drive.google.com/file/d/13A0RtvZZanHXKZNbz5JKwjjO2FedNQCR/view?usp=sharing)
+## 📚 Libraries used :
+* Scikit-learn
+* Pandas
+* Numpy
+* MlFlow
 
-## STEPS -
+## 🚀 Project structure:
+<img src="https://user-images.githubusercontent.com/62473531/229751088-6e983490-c4df-4760-82e7-3cc1288643d3.png" alt="workflow" width="70%">
 
-### STEP 01- Create a repository by using template repository
+## 🐨 DagsHub Data Pipeline
+<img src="https://user-images.githubusercontent.com/62473531/229747135-14143e8b-3935-477b-823b-4cbde2536861.JPG" alt="workflow" width="70%">
 
-### STEP 02- Clone the new repository
+Complete Project Data Pipeline is available at [DagsHub Data Pipeline](https://dagshub.com/hamehrabi/Project-DVC-NLP-StackOverflow)
 
-### STEP 03- Create a conda environment after opening the repository in VSCODE
-
-```bash
-conda create --prefix ./env python=3.8 -y
+### 🔥 Technologies Used:
+``` 
+1. Python 
+2. shell scripting 
+3. aws cloud Provider 
+4. mlflow
 ```
 
-```bash
-conda activate ./env
+## 🔌 Infrastructure:
 ```
-OR
-```bash
-source activate ./env
-```
-
-### One shot create and activate environment
-```bash
-conda create --prefix ./env python=3.8 -y && source activate ./env
+1. AWS S3
+2. GitHub
+3. DaghsHub
 ```
 
-### STEP 04- install the requirements
-```bash
+## 👷 Initial Setup: 
+```commandline
+conda create --prefix ./env python=3.9
+conda activate ./env 
 pip install -r requirements.txt
-```
-
-### STEP 05- initialize the dvc project
-```bash
 dvc init
 ```
 
-### STEP 06- commit and push the changes to the remote repository
+## Conclusion<a id='conclusion-'></a>
+This project is production ready to be used for the similar use cases and it will provide the automated and orchesrated production ready pipelines(Training & Serving)
+#### **Thanks for taking a look at this project. If you find it valuable, kindly rate it by clicking the star icon. Your support is highly appreciated! 😊🙏⭐**<br><br>
 
-
-### extra commands - 
-
-```bash
-echo "*.log" >> logs/.gitignore
-```
-
-```bash
-git rm --cached logs/running_logs.log
-```
-
-###  start mlflow sqlite server
-```bash
-mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 5000
-```
+#### **📃 License**
+MIT license ©
+My Website **[``website``](https://)** <br>
+Let's connect on **[``LinkedIn``](https://www.linkedin.com/in/hamed-mehrabi/)** <br>
