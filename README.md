@@ -1,6 +1,6 @@
 # Project: NLP Binary Classification using Microservices Architecture for StackOverflow Tag Prediction with DVC Integration.
 ## ✨ Project information:
-The project is a natural language processing (NLP) binary classifier problem of predicting tags for a given StackOverflow question. For example, we want one classifier which can predict a post that is about the R language by tagging it R. The project uses MLflow for tracking our experiments, and it is built on a microservices architecture, making it an end-to-end project. The dataset can be downloaded from this [link](https://drive.google.com/u/3/uc?id=1agyr-U_DGlH43ntuPmAoUZ5Q4veXK_Pd&export=download).
+The project is a natural language processing (NLP) binary classifier problem of predicting tags for a given StackOverflow question. For example, we want one classifier which can predict a post that is about the R language by tagging it R. The project uses DVC for dataversionaning, and it is built on a microservices architecture, making it an end-to-end project. The dataset can be downloaded from this [link](https://drive.google.com/u/3/uc?id=1agyr-U_DGlH43ntuPmAoUZ5Q4veXK_Pd&export=download).
 
 ## 📚 Libraries used :
 * Scikit-learn
